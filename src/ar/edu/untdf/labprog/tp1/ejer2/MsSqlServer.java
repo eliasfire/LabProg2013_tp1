@@ -9,11 +9,12 @@ package ar.edu.untdf.labprog.tp1.ejer2;
  * @author matiasgel
  */
 public class MsSqlServer {
+	
     public void getConnect(){
-      System.out.println("conectado a MsSql");
+      System.out.println("conectado a MsSqlServer");
     }
     public void ExecuteQuery(){
-      System.out.println("query a mssql");
+      System.out.println("query a mssqlserver");
     }
     
 }
