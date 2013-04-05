@@ -13,6 +13,6 @@ public class MysqlConn implements Conn{
         System.out.println("Conectado  a mysql");
     }; 
     public void query(){
-        System.out.println("consulta");
+        System.out.println("consulta mysql");
     }
 }
