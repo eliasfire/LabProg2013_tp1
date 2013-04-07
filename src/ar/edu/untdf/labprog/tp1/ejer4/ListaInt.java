@@ -10,6 +10,7 @@ package ar.edu.untdf.labprog.tp1.ejer4;
  */
 public class ListaInt {
     private Ordenacion ordenacion;
+    private Busqueda busqueda;
 	private int[] lista;
 
 	public ListaInt(int[] list) {
@@ -51,4 +52,15 @@ public class ListaInt {
 		System.out.println();
 	}
 
+	public Busqueda getBusqueda() {
+		return busqueda;
+	}
+
+	public void setBusqueda(Busqueda busqueda) {
+		this.busqueda = busqueda;
+	}
+
+	public boolean buscar(int[] a, int b){
+		return this.busqueda.buscar(a, b);
+	}
 }
