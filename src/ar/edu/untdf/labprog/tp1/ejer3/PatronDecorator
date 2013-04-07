@@ -1,0 +1,11 @@
+ SiteMesh.
+
+Este framework "SiteMesh" implementa el patrón Decorator. 
+Este patrón permite agregar funcionalidades a clases ya existentes.
+Por ejemplo, en el caso de SiteMesh, teniendo como punto de partida una página HTML, 
+podemos "transformarla" en otro tipo de salida (para imprimir, PDF, WML, etc.).
+Tambien tenemos como ejemplo la clase FileInputStream que nos permite leer caracter
+por caracter de un archivo de texto, despues, mediante la clase BufferInputStream, sin tocar 
+el codigo FileInputStream se creo una clase nueva que me permitio leer linea por linea mediante un buffer.
+Y despues se creo la clase NumberLineInputStream que deriva del BufferInputStream para
+poder obtener el numero de lineas que del archivo.

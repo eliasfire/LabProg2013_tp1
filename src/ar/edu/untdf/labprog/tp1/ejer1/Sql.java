@@ -22,6 +22,7 @@ public class Sql {
             System.out.println("db no definida");
             return;
         }
+        conn.connect();
         conn.query();
     }
 }

@@ -9,11 +9,17 @@ Se adjunta un proyecto netbeans con los package a usar en el trabajo.
 
 3 – Nombre algún Framework en java que utilice el patrón decorator, explique para que funcionalidad y como es utilizado el patrón.
 
-4 – El “ar.edu.untdf.labprog.tp1.ejer4” contiene una clase ListaInt, implementa una lista de enteros y la ordenación por los algoritmos quicksort y mergesort. Refactorice el código utilizando el patrón strategy de manera que se pueda utilizar la clase ListaInt independientemente del algoritmo de búsqueda a utilizar.
+4 – El “ar.edu.untdf.labprog.tp1.ejer4” contiene una clase ListaInt, implementa una lista de enteros y la ordenación por los algoritmos 
+quicksort y mergesort. Refactorice el código utilizando el patrón strategy de manera que se pueda utilizar la clase ListaInt 
+independientemente del algoritmo de búsqueda a utilizar.
 
-5 – Implemente el método búsqueda en la clase ListaInt de manera independiente al algoritmo a usar utilizando el patrón strategy, implemente la estrategia de búsqueda binaria y la estrategia de búsqueda secuencial a partir de la implementación dada en la página http://www.vogella.de/articles/JavaAlgorithmsSearch/article.html#binarysearch .
+5 – Implemente el método búsqueda en la clase ListaInt de manera independiente al algoritmo a usar utilizando el patrón strategy, 
+implemente la estrategia de búsqueda binaria y la estrategia de búsqueda secuencial a partir de la implementación dada en la página 
+http://www.vogella.de/articles/JavaAlgorithmsSearch/article.html#binarysearch .
 
-6 - El package “ar.edu.untdf.labprog.tp1.ejer6” contiene una simulación del protocolo ftp, se implementan los siguiente comandos: checkUser (chequea usuario), checkPass(chequea la clave), getFile (toma un archivo del ftp) y close (cierra la conexión), el comportamiento de lo comandos son dependientes del estado en que se encuentra el ftp. Refactorice el código utilizando el patrón state.
+6 - El package “ar.edu.untdf.labprog.tp1.ejer6” contiene una simulación del protocolo ftp, se implementan los siguiente comandos: 
+checkUser (chequea usuario), checkPass(chequea la clave), getFile (toma un archivo del ftp) y close (cierra la conexión), 
+el comportamiento de lo comandos son dependientes del estado en que se encuentra el ftp. Refactorice el código utilizando el patrón state.
 
 7 – En que se diferencia el patrón state del patrón strategy?
 
