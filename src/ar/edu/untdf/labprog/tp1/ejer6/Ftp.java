@@ -2,29 +2,73 @@ package ar.edu.untdf.labprog.tp1.ejer6;
 
 /**
  * 
- * @author Matias
+ * @author Abraham
  */
 public class Ftp {
 
+    FtpState start;
+    FtpState userid;
+    FtpState conected;
+
+    FtpState estado;
+    
     private String user = "admin";
     private String passwd = "1234";
     private final String archivo = "unarchivo.txt";
 
-    enum FtpState {
-
-        START, USERID, CONECTED
-    };
-    FtpState estado;
-
+    
     public Ftp() {
-        estado = FtpState.START;
-        System.out.println(estado);
+    	
+    	start = new Start(this);
+    	userid = new Userid(this);
+    	conected = new Conected(this);
+    	
+        estado = start;
     }
+    
+    
+    public String getUser() {
+		return user;
+	}
+    
+	public String getPasswd() {	
+		return passwd;	
+	}
+
+ 	public String getArchivo() {
+		return archivo;
+	}
+
+
+	public void checkUser(String ruser) {
+       estado.checkUser(ruser);
+    }
+    
+    public void checkPasswd(String pass) {
+       estado.checkPasswd(pass);
+    }
+
+    public String getFile() {
+       return estado.getFile();
+    }
+    
+	public void close(){
+		estado.close();
+	}
+	
+	public void setEstado(FtpState estado) {
+		this.estado = estado;
+	}
+    
+    
+	public FtpState getStart() {return start;}
+	public FtpState getConected() {	return conected;}
+	public FtpState getUserid() {	return userid;}
 
     /**
      * Verifica el usuario
      * @param ruser el usuario a verificar
-     */
+     
     public void checkUser(String ruser) {
         if (estado.equals(FtpState.START)) {
 
@@ -32,11 +76,9 @@ public class Ftp {
                 estado = FtpState.USERID;
                 System.out.println("Ingrese su clave");
             }
-            
         } else {
             System.out.println("error, comando no esperado");
             this.estado = FtpState.START;
-
         }
 
     }
@@ -68,10 +110,5 @@ public class Ftp {
         estado = FtpState.START;
     }
 
-    public static void main(String[] args) {
-        Ftp ftp = new Ftp();
-        ftp.checkUser("admin");
-        ftp.checkPasswd("admin");
-
-    }
+   */
 }

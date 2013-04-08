@@ -1,0 +1,11 @@
+El patrón State permite hacer diferentes cosas dependiendo del estado del objeto. 
+En otras palabras, lo que cambia de acuerdo al estado es que se hace. Además, todas 
+las posibilidades están incluidas en el código del modelo. A la hora de agregar nuevos
+estados y su correspondiente acción asociada basta con agregar una subclase sin tocar 
+las demás (observando el Open-Close principle).
+
+En cambio el patrón Strategy permite hacer lo mismo de diferentes maneras. En otras palabras, 
+lo que cambia es como se hace. Este patrón usualmente permite que la implementación específica 
+(la estrategia) se pueda seleccionar por configuración, por el estado de cierto objeto, etc.
+
+Fuente: http://carlospeix.com/2011/04/cul-es-la-diferencia-entre-el-patrn-strategy-y-state/
