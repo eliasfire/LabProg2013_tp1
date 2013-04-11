@@ -11,6 +11,12 @@
 package ar.edu.untdf.labprog.tp1.ejer9;
 
 import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+import ar.edu.untdf.labprog.tp1.ejerr10.ProvinciaValidator;
 
 /**
  *
@@ -52,34 +58,39 @@ public class Validador extends JFrame {
                 botonActionPerformed(evt);
             }
         });
+        
+        provincia = new JTextField();
+        provincia.setText("provincia");
+        provincia.setColumns(10);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(documento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(boton)
-                .addContainerGap(30, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
+        				.addComponent(email, Alignment.LEADING)
+        				.addComponent(documento, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
+        			.addGap(18)
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
+        				.addComponent(boton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(provincia))
+        			.addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(documento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(boton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(email, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(boton))
+        			.addGap(18)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(documento, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(provincia, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,7 +98,10 @@ public class Validador extends JFrame {
     private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
         FieldValidator email2 = new EmailValidator();
         FieldValidator documento2 = new DocumentoValidator();
-    	System.out.println("campo email:"+ email2.validate(email.getText()) + "  campo documento: "+ documento2.validate(documento.getText()));
+        FieldValidator provincia2 = new ProvinciaValidator();
+    	System.out.println( " campo email:"+ email2.validate(email.getText()) + 
+    						" campo documento: "+ documento2.validate(documento.getText()) + 
+    						" campo provincia:"+ provincia2.validate(provincia.getText()));
     }//GEN-LAST:event_botonActionPerformed
 
     /**
@@ -105,5 +119,6 @@ public class Validador extends JFrame {
     private javax.swing.JButton boton;
     private javax.swing.JTextField documento;
     private javax.swing.JTextField email;
+    private JTextField provincia;
     // End of variables declaration//GEN-END:variables
 }
