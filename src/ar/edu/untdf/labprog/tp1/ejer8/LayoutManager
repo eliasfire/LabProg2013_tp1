@@ -1,0 +1,19 @@
+Los layout managers ayudan a adaptar los diversos Componentes que se desean incorporar a un Panel, 
+es decir, especifican la apariencia que tendrán los Componentes a la hora de colocarlos sobre un Contenedor. 
+Java dispone de varios layouts que implemtan de la interfaz LayoutManager:
+FlowLayout , BorderLayout , GridLayout , CardLayout y GridBagLayout.
+La interfaz LayoutManager define los siguientes metodos:
+
+1- addLayoutComponent(String name, Component comp) 
+2- layoutContainer(Container parent) 
+3- minimumLayoutSize(Container parent) 
+4- preferredLayoutSize(Container parent) 
+5- removeLayoutComponent(Component comp) 
+
+El patrón estrategia permite mantener un conjunto de algoritmos de entre los cuales el 
+objeto cliente puede elegir aquel que le conviene e intercambiarlo dinámicamente según sus necesidades.
+Por ejemplo, la clase BorderLayout implementa LayoutManager, por lo que esta obligada a 
+implementar cada uno de los metodos antes mencionados. Tambien incorpora nuevos metodos
+y se definen constantes como las siguiente: NORTH, SOUTH, EAST, WEST, y CENTER.
+Dependiendo del layout que el programador decida utilizar se modificara el 
+comportamiento (tamaño, ubicacion, etc) de los componentes dentro un Contenedor.
